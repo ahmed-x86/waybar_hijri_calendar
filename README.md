@@ -13,7 +13,7 @@ Add this to your Waybar config file:
     "tooltip": true
 },
 ```
-this is for testing23
+this is for testing231
 
 ## 🎨 Styling
 
