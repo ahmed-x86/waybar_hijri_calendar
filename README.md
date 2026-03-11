@@ -13,7 +13,7 @@ Add this to your Waybar config file:
     "tooltip": true
 },
 ```
-this is for testing 12345678
+this is for testing 123456789
 
 ## 🎨 Styling
 
