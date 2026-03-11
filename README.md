@@ -13,7 +13,7 @@ Add this to your Waybar config file:
     "tooltip": true
 },
 ```
-### HI123
+### HI1234
 
 ## 🎨 Styling
 
