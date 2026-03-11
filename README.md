@@ -14,6 +14,7 @@ Add this to your Waybar config file:
 },
 ```
 
+
 ## 🎨 Styling
 
 Add this to your Waybar style.css for a Catppuccin-themed look:
