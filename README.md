@@ -13,6 +13,7 @@ Add this to your Waybar config file:
     "tooltip": true
 },
 ```
+
 ## 🎨 Styling
 
 Add this to your Waybar style.css for a Catppuccin-themed look:
