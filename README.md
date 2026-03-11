@@ -13,7 +13,7 @@ Add this to your Waybar config file:
     "tooltip": true
 },
 ```
-### for tetsing 123456
+### for tetsing 1234567
 
 ## 🎨 Styling
 
