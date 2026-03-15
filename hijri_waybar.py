@@ -55,8 +55,11 @@ I18N = {
         "weekdays": ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
         "white_days": "Jours Blancs ⚪",
         "events": {
-            (9, 1): "Ramadan 🌙", (9, 27): "Nuit du Destin ✨", (10, 1): "Aïd el-Fitr 🎉",
-            (12, 9): "Jour d'Arafat 🤲", (12, 10): "Aïd el-Adha 🐑"
+            (1, 9): "Tasu'a 🌙", (1, 10): "Achoura 🌙", (9, 1): "Début du Ramadan 🌙",
+            (9, 21): "Nuit Impaire 🤲", (9, 23): "Nuit Impaire 🤲", (9, 25): "Nuit Impaire 🤲",
+            (9, 27): "Nuit du Destin ✨", (9, 29): "Nuit Impaire 🤲", (10, 1): "Aïd el-Fitr 🎉",
+            (12, 8): "Tarwiyah 🕋", (12, 9): "Jour d'Arafat 🤲", (12, 10): "Aïd el-Adha 🐑",
+            (12, 11): "Tachriq 1", (12, 12): "Tachriq 2", (12, 13): "Tachriq 3"
         }
     },
     "de": {
@@ -64,14 +67,26 @@ I18N = {
         "calendar_header": "So  Mo  Di  Mi  Do  Fr  Sa",
         "weekdays": ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
         "white_days": "Weiße Tage ⚪",
-        "events": { (9, 1): "Ramadan 🌙", (10, 1): "Eid al-Fitr 🎉", (12, 10): "Opferfest 🐑" }
+        "events": {
+            (1, 9): "Tasu'a 🌙", (1, 10): "Aschura 🌙", (9, 1): "Ramadan Beginn 🌙",
+            (9, 21): "Ungerade Nacht 🤲", (9, 23): "Ungerade Nacht 🤲", (9, 25): "Ungerade Nacht 🤲",
+            (9, 27): "Lailat al-Qadr ✨", (9, 29): "Ungerade Nacht 🤲", (10, 1): "Eid al-Fitr 🎉",
+            (12, 8): "Tarwiyah 🕋", (12, 9): "Tag von Arafat 🤲", (12, 10): "Eid al-Adha 🐑",
+            (12, 11): "Taschriq 1", (12, 12): "Taschriq 2", (12, 13): "Taschriq 3"
+        }
     },
     "it": {
         "error": "🌙 Errore", "no_connection": "Nessuna connessione.", "reminder": "Promemoria",
         "calendar_header": "Do  Lu  Ma  Me  Gi  Ve  Sa",
         "weekdays": ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"],
         "white_days": "Giorni Bianchi ⚪",
-        "events": { (9, 1): "Ramadan 🌙", (10, 1): "Eid al-Fitr 🎉", (12, 10): "Eid al-Adha 🐑" }
+        "events": {
+            (1, 9): "Tasu'a 🌙", (1, 10): "Ashura 🌙", (9, 1): "Inizio Ramadan 🌙",
+            (9, 21): "Notte Dispari 🤲", (9, 23): "Notte Dispari 🤲", (9, 25): "Notte Dispari 🤲",
+            (9, 27): "Notte del Destino ✨", (9, 29): "Notte Dispari 🤲", (10, 1): "Eid al-Fitr 🎉",
+            (12, 8): "Tarwiyah 🕋", (12, 9): "Giorno di Arafat 🤲", (12, 10): "Eid al-Adha 🐑",
+            (12, 11): "Tashreeq 1", (12, 12): "Tashreeq 2", (12, 13): "Tashreeq 3"
+        }
     }
 }
 
@@ -133,7 +148,6 @@ def safe_print(output_dict):
 
 def main():
     parser = argparse.ArgumentParser()
-    # جلب جميع اللغات تلقائياً من قاموس I18N
     parser.add_argument("-lang", "--language", default="ar", choices=list(I18N.keys()), help="Language")
     args = parser.parse_args()
     lang = args.language
