@@ -12,13 +12,16 @@ import ssl
 # مسار ملف التخزين
 CACHE_FILE = os.path.expanduser("~/.cache/waybar_hijri_cache.json")
 
-# 1. قاموس الشهور
+# 1. قاموس الشهور لكل اللغات المدعومة
 MONTHS_I18N = {
     "ar": ["محرم", "صفر", "ربيع الأول", "ربيع الآخر", "جمادى الأولى", "جمادى الآخرة", "رجب", "شعبان", "رمضان", "شوال", "ذو القعدة", "ذو الحجة"],
-    "en": ["Muharram", "Safar", "Rabi' al-awwal", "Rabi' al-thani", "Jumada al-ula", "Jumada al-akhira", "Rajab", "Sha'ban", "Ramadan", "Shawwal", "Dhu al-Qi'dah", "Dhu al-Hijjah"]
+    "en": ["Muharram", "Safar", "Rabi' al-awwal", "Rabi' al-thani", "Jumada al-ula", "Jumada al-akhira", "Rajab", "Sha'ban", "Ramadan", "Shawwal", "Dhu al-Qi'dah", "Dhu al-Hijjah"],
+    "fr": ["Muharram", "Safar", "Rabi' al-awwal", "Rabi' al-thani", "Jumada al-ula", "Jumada al-akhira", "Rajab", "Sha'ban", "Ramadan", "Shawwal", "Dhu al-Qi'dah", "Dhu al-Hijjah"],
+    "de": ["Muharram", "Safar", "Rabi' al-awwal", "Rabi' al-thani", "Jumada al-ula", "Jumada al-akhira", "Rajab", "Sha'ban", "Ramadan", "Shawwal", "Dhu al-Qi'dah", "Dhu al-Hijjah"],
+    "it": ["Muharram", "Safar", "Rabi' al-awwal", "Rabi' al-thani", "Jumada al-ula", "Jumada al-akhira", "Rajab", "Sha'ban", "Ramadan", "Shawwal", "Dhu al-Qi'dah", "Dhu al-Hijjah"]
 }
 
-# 2. قاموس الإعدادات والمناسبات
+# 2. قاموس الإعدادات والمناسبات الكاملة (مترجمة لكل اللغات)
 I18N = {
     "ar": {
         "error": "🌙 خطأ", "no_connection": "لا يوجد اتصال.", "reminder": "تذكير",
@@ -32,6 +35,43 @@ I18N = {
             (12, 8): "التروية 🕋", (12, 9): "يوم عرفة 🤲", (12, 10): "عيد الأضحى 🐑",
             (12, 11): "تشريق 1", (12, 12): "تشريق 2", (12, 13): "تشريق 3"
         }
+    },
+    "en": {
+        "error": "🌙 Error", "no_connection": "No connection.", "reminder": "Reminder",
+        "calendar_header": "Su  Mo  Tu  We  Th  Fr  Sa",
+        "weekdays": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "white_days": "White Days Fasting ⚪",
+        "events": {
+            (1, 9): "Tasu'a 🌙", (1, 10): "Ashura 🌙", (9, 1): "Ramadan Start 🌙",
+            (9, 21): "Odd Night 🤲", (9, 23): "Odd Night 🤲", (9, 25): "Odd Night 🤲",
+            (9, 27): "Laylat al-Qadr ✨", (9, 29): "Odd Night 🤲", (10, 1): "Eid al-Fitr 🎉",
+            (12, 8): "Tarwiyah 🕋", (12, 9): "Arafah Day 🤲", (12, 10): "Eid al-Adha 🐑",
+            (12, 11): "Tashreeq 1", (12, 12): "Tashreeq 2", (12, 13): "Tashreeq 3"
+        }
+    },
+    "fr": {
+        "error": "🌙 Erreur", "no_connection": "Pas de connexion.", "reminder": "Rappel",
+        "calendar_header": "Di  Lu  Ma  Me  Je  Ve  Sa",
+        "weekdays": ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
+        "white_days": "Jours Blancs ⚪",
+        "events": {
+            (9, 1): "Ramadan 🌙", (9, 27): "Nuit du Destin ✨", (10, 1): "Aïd el-Fitr 🎉",
+            (12, 9): "Jour d'Arafat 🤲", (12, 10): "Aïd el-Adha 🐑"
+        }
+    },
+    "de": {
+        "error": "🌙 Fehler", "no_connection": "Keine Verbindung.", "reminder": "Erinnerung",
+        "calendar_header": "So  Mo  Di  Mi  Do  Fr  Sa",
+        "weekdays": ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
+        "white_days": "Weiße Tage ⚪",
+        "events": { (9, 1): "Ramadan 🌙", (10, 1): "Eid al-Fitr 🎉", (12, 10): "Opferfest 🐑" }
+    },
+    "it": {
+        "error": "🌙 Errore", "no_connection": "Nessuna connessione.", "reminder": "Promemoria",
+        "calendar_header": "Do  Lu  Ma  Me  Gi  Ve  Sa",
+        "weekdays": ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"],
+        "white_days": "Giorni Bianchi ⚪",
+        "events": { (9, 1): "Ramadan 🌙", (10, 1): "Eid al-Fitr 🎉", (12, 10): "Eid al-Adha 🐑" }
     }
 }
 
@@ -51,7 +91,7 @@ def save_cache(cache_data):
         pass
 
 def fetch_hijri_month(date_str):
-    # إنشاء سياق أمان لتجاوز أخطاء SSL الشائعة
+    # إنشاء سياق أمان لتجاوز أخطاء SSL
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
@@ -93,8 +133,8 @@ def safe_print(output_dict):
 
 def main():
     parser = argparse.ArgumentParser()
-    # لتسهيل الكود حذفت اللغات الأخرى في هذا المثال وركزت على العربية، يمكنك إعادتها إن أردت.
-    parser.add_argument("-lang", "--language", default="ar", choices=["ar", "en"], help="Language")
+    # جلب جميع اللغات تلقائياً من قاموس I18N
+    parser.add_argument("-lang", "--language", default="ar", choices=list(I18N.keys()), help="Language")
     args = parser.parse_args()
     lang = args.language
 
