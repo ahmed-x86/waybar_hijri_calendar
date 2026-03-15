@@ -57,7 +57,10 @@ Add one of the following themes to your Waybar `style.css`:
 #custom-hijri:hover {
     color: #fab387;          
 }
-
+#custom-hijri.error {
+    color: #f38ba8; 
+    background-color: rgba(243, 139, 168, 0.1);
+}
 ```
 
 ### 🧛 Dracula
@@ -72,6 +75,10 @@ Add one of the following themes to your Waybar `style.css`:
 
 #custom-hijri:hover {
     color: #ff79c6;          
+}
+#custom-hijri.error {
+    color: #f38ba8; 
+    background-color: rgba(243, 139, 168, 0.1);
 }
 
 ```
@@ -89,6 +96,10 @@ Add one of the following themes to your Waybar `style.css`:
 #custom-hijri:hover {
     color: #81A1C1;          
 }
+#custom-hijri.error {
+    color: #f38ba8; 
+    background-color: rgba(243, 139, 168, 0.1);
+}
 
 ```
 
@@ -105,6 +116,11 @@ Add one of the following themes to your Waybar `style.css`:
 #custom-hijri:hover {
     color: #fe8019;          
 }
+#custom-hijri.error {
+    color: #f38ba8; 
+    background-color: rgba(243, 139, 168, 0.1);
+}
+
 
 ```
 
