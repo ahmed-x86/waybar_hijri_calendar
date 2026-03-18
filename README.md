@@ -63,7 +63,7 @@ Add one of the following themes to your Waybar `style.css`:
 }
 ```
 
-### 🧛 Dracula
+### 🎨 Dracula
 
 ```css
 #custom-hijri {
