@@ -22,7 +22,12 @@ Use the `-lang` flag to change the display language. The default is Arabic.
 | `-lang fr` | **French** | French | Di Lu Ma Me Je Ve Sa |
 | `-lang de` | **German** | German | So Mo Di Mi Do Fr Sa |
 | `-lang it` | **Italian** | Italian | Do Lu Ma Me Gi Ve Sa |
-
+| `-lang es` | **Spanish** | Spanish | Do Lu Ma Mi Ju Vi Sá |
+| `-lang tr` | **Turkish** | Turkish | Pz Pt Sa Ça Pe Cu Ct |
+| `-lang ku` | **Kurdish** | Kurdish | Yk Du Sê Ça Pê În Şe |
+| `-lang ja` | **Japanese** | Japanese | 日 月 火 水 木 金 土 |
+| `-lang ko` | **Korean** | Korean | 일 월 화 수 목 금 토 |
+| `-lang id` | **Indonesian** | Indonesian | Mg Sn Sl Rb Km Jm Sb |
 ---
 
 ## ⚙️ Configuration
